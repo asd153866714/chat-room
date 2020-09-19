@@ -4,6 +4,7 @@ const chatForm = document.querySelector('#chat-form')
 const chatMessages = document.querySelector('.chat-messages')
 const roomName = document.querySelector('#room-name')
 const userList = document.querySelector('#users')
+const typingInput = document.querySelector('#msg')
 
 // Get username and room from URL
 const params = new URLSearchParams(window.location.search);
@@ -52,10 +53,12 @@ socket.on('message', (message) => {
     chatMessages.scrollTop = chatMessages.scrollHeight
 })
 
+
+
 // Message submit
 chatForm.addEventListener('submit', (event) => {
     event.preventDefault()
-
+    
     // Get message text
     const msg = event.target.elements.msg.value
 
